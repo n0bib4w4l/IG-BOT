@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 
-# Install python requirements
+set -e  # Stop if any error
+
+echo "Installing Python requirements..."
 pip install -r requirements.txt
 
-# Install Playwright browsers
-playwright install
+echo "Installing Playwright Chromium with deps..."
+python -m playwright install chromium --with-deps
+
+echo "Playwright setup completed."
